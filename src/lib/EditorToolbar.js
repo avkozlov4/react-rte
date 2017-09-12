@@ -8,6 +8,7 @@ import {ENTITY_TYPE} from 'draft-js-utils';
 import DefaultToolbarConfig from './EditorToolbarConfig';
 import StyleButton from './StyleButton';
 import PopoverIconButton from '../ui/PopoverIconButton';
+import FileButton from '../ui/FileButton';
 import ButtonGroup from '../ui/ButtonGroup';
 import Dropdown from '../ui/Dropdown';
 import IconButton from '../ui/IconButton';
@@ -84,6 +85,9 @@ export default class EditorToolbar extends Component {
         }
         case 'IMAGE_BUTTON': {
           return this._renderImageButton(groupName, toolbarConfig);
+        }
+        case 'FILE_BUTTON': {
+          return this._renderFileButton(groupName, toolbarConfig);
         }
         case 'BLOCK_TYPE_BUTTONS': {
           return this._renderBlockTypeButtons(groupName, toolbarConfig);
@@ -213,6 +217,18 @@ export default class EditorToolbar extends Component {
           isDisabled={!isCursorOnLink}
           onClick={this._removeLink}
           focusOnClick={false}
+        />
+      </ButtonGroup>
+    );
+  }
+
+  _renderFileButton(name: string) {
+    return (
+      <ButtonGroup key={name}>
+        <FileButton
+          label="File"
+          iconName="file"
+          onSelect={this._setImage}
         />
       </ButtonGroup>
     );
