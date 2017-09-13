@@ -3,10 +3,6 @@
   "version": "0.15.0",
   "description": "React Rich Text Editor",
   "main": "dist/react-rte.js",
-  "files": [
-    "lib",
-    "dist"
-  ],
   "scripts": {
     "build": "npm run build-lib && npm run build-dist",
     "build-dist": "rimraf dist && webpack",
