@@ -26,7 +26,6 @@ export default class Button extends Component {
   }
 
   render() {
-    console.log('this.props', this.props);
     let {props} = this;
     let {className, isDisabled, noButton, focusOnClick, formSubmit, ...otherProps} = props;
     className = cx(className, styles.root);

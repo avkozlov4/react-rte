@@ -229,6 +229,7 @@ export default class EditorToolbar extends Component {
           label="File"
           iconName="file"
           onSelect={this._setImage}
+          request={this.props.request}
         />
       </ButtonGroup>
     );

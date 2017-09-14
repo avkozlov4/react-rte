@@ -23,9 +23,12 @@ export default class FileButton extends Component {
   render() {
     let className = cx(styles.root);
     let {...props} = this.props; // eslint-disable-line no-unused-vars
+    let newProps = Object.assign({}, {...props});
+    delete newProps.request;
+
     return (
       <label htmlFor="file-button" className={className} >
-        <IconButton noButton={true} {...props} />
+        <IconButton noButton={true} {...newProps} />
         <input type="file" id="file-button" onChange={this._onSelect} />
       </label>
     );
