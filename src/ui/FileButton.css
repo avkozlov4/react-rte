@@ -1,3 +1,7 @@
 .root input[type=file] {
   display: none;
 }
+
+.root span[title=File] {
+  margin-right: 0;
+}

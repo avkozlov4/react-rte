@@ -32,7 +32,7 @@ export default class Button extends Component {
     let onMouseDown = (focusOnClick === false) ? this._onMouseDownPreventDefault : props.onMouseDown;
     let type = formSubmit ? 'submit' : 'button';
     let control = noButton 
-      ? <span type={type} {...otherProps} className={className}>
+      ? <span {...otherProps} className={className}>
           {props.children}
         </span>
       : <button type={type} {...otherProps} onMouseDown={onMouseDown} className={className} disabled={isDisabled}>
